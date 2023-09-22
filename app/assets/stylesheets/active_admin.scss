@@ -1,0 +1,30 @@
+@import 'activeadmin_addons/all';
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+
+
+
+
+$skinActiveColor: #c8c8c8;
+$skinHeaderBck: #f6d86a;
+$panelHeaderBck: #f6d86a;
+$skinHeaderTextColor: white; //header texto
+$red: #cc6510;
+$yellow: #e7d41a;   
+$green: #82b06f;
+
+$listo-color: #C2B066;
+$proceso-color: #EFDEDB;
+$terminado-color: #ECE9E0;
+
+
+$skinTextColor: #2f2e2e; //C2B066
+$skinTextActiveColor: #2f2e2e;
+$skinTextTable: #2f2e2e;
+$skinFontFamily: 'Source Sans Pro', sans-serif;
+$panelHeaderTextColor: white;
+
+
+
+@import "active_skin";
