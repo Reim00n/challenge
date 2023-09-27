@@ -2,6 +2,12 @@ class RespuestaController < ApplicationController
   before_action :authenticate_user
   def new
     @user = Cliente.find_by(email: session[:current_email])
+    # La línea inferior podría mejorarse significativamente, ya que si las encuestas,
+    # formularios y preguntas no están creados, estas líneas de código fallarán.
+    # Además, sería beneficioso verificar si el usuario ya ha completado la
+    # encuesta y, en caso afirmativo, permitirle seleccionar otra encuesta de
+    # manera aleatoria, pero asegurándose de que esté relacionada con
+    #  las preferencias que el cliente haya marcado previamente. 
     @questions = @user.preferencias.first.encuestas.first.formulario.preguntas
     if session[:current_step].blank?
       session[:current_step]=1
