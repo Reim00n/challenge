@@ -6,9 +6,9 @@
 
 
 
-$skinActiveColor: #c8c8c8;
-$skinHeaderBck: #f6d86a;
-$panelHeaderBck: #f6d86a;
+$skinActiveColor: #C9D2D7;
+$skinHeaderBck: #617485;
+$panelHeaderBck: #617485;
 $skinHeaderTextColor: white; //header texto
 $red: #cc6510;
 $yellow: #e7d41a;   
@@ -19,12 +19,13 @@ $proceso-color: #EFDEDB;
 $terminado-color: #ECE9E0;
 
 
-$skinTextColor: #2f2e2e; //C2B066
-$skinTextActiveColor: #2f2e2e;
-$skinTextTable: #2f2e2e;
+$skinTextColor: #617485; //C2B066
+$skinTextActiveColor: #617485;
+$skinTextTable: #7f8c8d;
 $skinFontFamily: 'Source Sans Pro', sans-serif;
 $panelHeaderTextColor: white;
 
 
+$skinLogo:  image-url("logo1.png") no-repeat center center ;
 
 @import "active_skin";

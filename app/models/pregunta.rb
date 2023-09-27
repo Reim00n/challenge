@@ -10,4 +10,6 @@
 class Pregunta < ApplicationRecord
   has_many :formulario_preguntas
   has_many :formularios, through: :formulario_preguntas
+  has_many :respuestas, through: :formulario_preguntas
+
 end

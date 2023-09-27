@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="reset-center">
+    <div class="reset-password__wrap">
+      <h1 class="password__wrap_h1">Welcome to <%= ENV['APP_NAME'] %> - Exclusive Newsletter Subscription</h1>
+      <p>Dear <%= @resource&.name %>!</p>
+      <div class="reset-password__text">
+        <p>We are excited to welcome you to <%= ENV['APP_NAME'] %>!</p>
+        <p>Thank you for registering with us. We're thrilled to have you on board as we prepare to launch our website in your country. To stay up-to-date with all the latest news, exclusive offers, and exciting updates, we invite you to subscribe to our newsletter.</p>
+        <p>By subscribing, you'll be the first to know about:</p>
+        <ul>
+          <li>Special promotions and discounts</li>
+          <li>New product launches</li>
+          <li>Exciting events and contests</li>
+          <li>Helpful tips and guides</li>
+        </ul>
+      </div>
+     
+      <div class="reset-password__text2">
+        <p>Don't worry, we respect your privacy, and you can unsubscribe at any time. Your information is safe with us.</p>
+        <p>Thank you for choosing <%= ENV['APP_NAME'] %>. We look forward to providing you with an amazing experience once our website launches in your country.</p>
+        <p>If you have any questions or need assistance, please don't hesitate to contact our support team at <a href="mailto:[Support Email Address]"><%= ENV['SUPPORT_EMAIL_ADDRESS'] %></a>.</p>
+        <p>Warm regards,</p>
+        <p>The <%= ENV['APP_NAME'] %> Team</p>
+      </div>
+      <p>P.S. Stay tuned for more updates on our website launch and exclusive offers!</p>
+    </div>
+  </div>
+</div>

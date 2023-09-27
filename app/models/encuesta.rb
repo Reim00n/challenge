@@ -2,12 +2,12 @@
 #
 # Table name: encuestas
 #
-#  id              :bigint           not null, primary key
-#  estado_encuesta :integer
-#  nombre_encuesta :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  preferencia_id  :bigint           not null
+#  id             :bigint           not null, primary key
+#  estado         :integer
+#  nombre         :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  preferencia_id :bigint           not null
 #
 # Indexes
 #
@@ -19,4 +19,5 @@
 #
 class Encuesta < ApplicationRecord
   has_one :formulario
+  enum estado: %i[active inactive]
 end

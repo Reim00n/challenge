@@ -1,0 +1,12 @@
+es:
+  survey:
+    completed:
+      title: "¡Encuesta completada!"
+      thank_you: "Gracias por responder a todas las preguntas."
+  questions:
+    step_title: "Pregunta "
+    answer_label: "Respuesta"
+    good_option: "Bueno"
+    regular_option: "Regular"
+    bad_option: "Malo"
+    submit_button: "Siguiente"

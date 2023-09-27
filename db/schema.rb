@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_22_043406) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_27_024228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,9 +56,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_043406) do
     t.index ["preferencia_id"], name: "index_clientes_preferencia_on_preferencia_id"
   end
 
+  create_table "cupones", force: :cascade do |t|
+    t.bigint "cliente_id", null: false
+    t.datetime "desde"
+    t.datetime "hasta"
+    t.integer "estado"
+    t.integer "descuento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cliente_id"], name: "index_cupones_on_cliente_id"
+  end
+
   create_table "encuestas", force: :cascade do |t|
-    t.string "nombre_encuesta"
-    t.integer "estado_encuesta"
+    t.string "nombre"
+    t.integer "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "preferencia_id", null: false
@@ -123,6 +134,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_043406) do
 
   add_foreign_key "clientes_preferencia", "clientes"
   add_foreign_key "clientes_preferencia", "preferencias"
+  add_foreign_key "cupones", "clientes"
   add_foreign_key "encuestas", "preferencias"
   add_foreign_key "formularios", "encuestas"
   add_foreign_key "formularios_pregunta", "formularios"

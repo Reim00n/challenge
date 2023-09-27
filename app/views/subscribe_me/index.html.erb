@@ -1,0 +1,49 @@
+<% if flash[:alert] %>
+
+<label>
+  <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+  <div class="alert warning">
+    <span class="alertClose">X</span>
+    <span class="alertText"><%= flash[:alert] %>
+		<br class="clear"/></span>
+  </div>
+</label>
+
+
+
+<% end %>
+<div class="container-subscribe">
+  <h1 class="block-effect" style="--td: 1.2s">
+  
+    <div class="block-reveal" style="--bc: #67b884; --d: .1s"><%=  image_tag "logo.svg" %> </div>
+    <div class="block-reveal" style="--bc: #040F0F; --d: .5s">
+      <div style="display:flex;justify-content:center;align-items:center;">
+        <small style="font-size: 1rem;">
+        Welcome! Soon we will launch our site in
+                    this country.
+            Suscribe to receive our newsletter.
+            </small>
+      </div>
+    </div>
+  </h1>
+  <div class="article-subscribe-me">
+  <%= form_for(:subscribe, url: enviar_email_subscribe_me_path, html: { multipart: true,class:"form-subscribe"}) do |f| %>
+  
+                      <div class="email-subscribe">
+                        <%= f.text_field :email,label: 'Email',placeholder:"Email" %>
+                      </div>
+                      <div class="check-box-subscribe">
+                        <%= f.collection_check_boxes :preferencia_ids, Preferencia.all, :id, :texto do |b| %>
+                            <div class="row-subscribe"><%= b.label { b.check_box + b.text } %></div>
+                        <% end %>
+                      </div>
+  
+                  <div class="submit-subscribe">
+                  <%= f.submit %>
+                  </div>
+              <% if session[:current_email].present? %>
+                <div class="submit-subscribe"><%= link_to I18n.t('links.get_coupons'), new_respuestum_path %></div>
+              <% end %>
+              <% end %>
+  </div>
+</div>

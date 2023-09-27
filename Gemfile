@@ -81,6 +81,8 @@ gem 'activeadmin'
 gem 'activeadmin_addons'
 gem 'active_skin'
 gem 'devise'
+gem "http"
+
 gem 'dotenv-rails'
 gem 'redis-namespace' # para sidekiq compartiendo redis
 gem 'sidekiq', '~> 5'
@@ -89,3 +91,4 @@ gem 'simple_token_authentication', '~> 1.0'
 gem "rails-i18n"
 gem 'premailer-rails'
 gem 'capistrano-systemd-multiservice'
+gem 'wicked'

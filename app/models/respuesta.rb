@@ -22,4 +22,6 @@
 class Respuesta < ApplicationRecord
   belongs_to :cliente
   belongs_to :formulario_pregunta
+  enum valor_respuesta: %i[good regular bad]
+
 end

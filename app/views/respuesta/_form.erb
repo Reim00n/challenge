@@ -1,0 +1,16 @@
+<div class="container-complete">
+  <h1> <%= t('questions.step_title') %>  <%= session[:current_step] %></h1>
+  <%= form_tag respuesta_path do %>
+    <%= hidden_field_tag :question_id, @questions[session[:current_step] - 1].id %>
+    <div class="field">
+      <%= label_tag 'answer', t("#{@questions[session[:current_step] - 1].texto}") %><br>
+  
+      <!-- Usar radio_button para cada opción del enum -->
+      <%= radio_button_tag 'answer', 'good' %> <%= t('questions.good_option') %>
+      <%= radio_button_tag 'answer', 'regular' %> <%= t('questions.regular_option') %>
+      <%= radio_button_tag 'answer', 'bad' %> <%= t('questions.bad_option') %>
+    </div>
+    <%= submit_tag "#{t('questions.submit_button')}"  %>
+  <% end %>
+  
+</div>
